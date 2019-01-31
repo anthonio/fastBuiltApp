@@ -1,0 +1,56 @@
+<!--
+  Generated template for the RegistroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registro de usuário</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nome completo</ion-label>
+      <ion-input type="text" #name></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label stacked>Usuário</ion-label>
+      <ion-input type="text" #user></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+      <ion-input type="email" #email></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="password" #passOne></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Repita a senha</ion-label>
+      <ion-input type="password" #passTwo></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Tipo de usuário</ion-label>
+        <ion-select [(ngModel)]="tipoUsuario" multiple="false" cancelText="Cancelar" okText="Ok">
+          <ion-option *ngFor="let option of ion_options" value={{option.id}} >{{option.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button block (click)="insert(name.value, user.value, email.value, passOne.value, passTwo.value)">Salvar</button>
+  
+  </ion-list>
+</ion-content>
