@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { RoutesProvider } from '../../providers/routes/routes';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the RegistroPage page.
@@ -57,19 +58,26 @@ export class RegistroPage {
       alert.present();
     } else {
 
-      //let body = `name=${name}user=${user}email=${email}password=${passTwo}`;
       let body = {name, user, email, password:passTwo, id_type: this.tipoUsuario};
 
       this.routes.postData("/usuario", body).subscribe(data => {
 
         console.log(data);
+        let response = (data as any);
+
+        let ret = JSON.parse(response._body);
+
+        if(ret.insertId){
+          this.navCtrl.push(TabsPage, {id_user: ret.insertId});
+        } else {
+          console.log(ret);
+        }
 
       }, error => {
 
         console.log(error);
 
       });
-
       
     }
 

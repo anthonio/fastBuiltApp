@@ -15,6 +15,7 @@ import { RoutesProvider } from '../providers/routes/routes';
 import { RegistroPageModule } from '../pages/registro/registro.module';
 import { HTTP } from '@ionic-native/http/ngx';
 import { HttpModule } from '@angular/http';
+import { UserProvider } from '../providers/user/user';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { HttpModule } from '@angular/http';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RoutesProvider,
-    HTTP
+    HTTP,
+    UserProvider
   ]
 })
 export class AppModule {}

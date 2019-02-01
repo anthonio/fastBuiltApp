@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RoutesProvider } from '../../providers/routes/routes';
 import { TabsPage } from '../tabs/tabs';
 import { RegistroPage } from '../registro/registro';
+import { UserProvider } from '../../providers/user/user';
 
 /**
  * Generated class for the LoginPage page.
@@ -16,7 +17,8 @@ import { RegistroPage } from '../registro/registro';
   selector: 'page-login',
   templateUrl: 'login.html',
   providers: [
-    RoutesProvider
+    RoutesProvider,
+    UserProvider
   ]
 })
 export class LoginPage {
@@ -24,7 +26,8 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private routes: RoutesProvider) {
+    private routes: RoutesProvider,
+    private userProvider: UserProvider) {
   }
 
   ionViewDidLoad() {
@@ -40,6 +43,7 @@ export class LoginPage {
       let ret = JSON.parse(response._body);
 
       if(ret.user){
+        this.userProvider.setUserData(ret.id);
         this.navCtrl.push(TabsPage);
       } else {
         this.navCtrl.push(RegistroPage);

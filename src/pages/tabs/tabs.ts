@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { EmpresaPage } from '../empresa/empresa';
 import { HomePage } from '../home/home';
 import { ConfiguracaoPage } from '../configuracao/configuracao';
+import { NavParams } from 'ionic-angular';
 
 @Component({
   templateUrl: 'tabs.html'

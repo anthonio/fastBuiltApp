@@ -1,8 +1,4 @@
-//import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-
-
-import { HTTP } from '@ionic-native/http/ngx';
 import { Http, Headers, RequestOptions } from '@angular/http';
 
 /*
@@ -26,8 +22,7 @@ export class RoutesProvider {
   }
 
   postData(route, body){
-    console.log("chegou");
-    
+
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
