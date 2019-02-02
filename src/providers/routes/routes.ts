@@ -31,5 +31,14 @@ export class RoutesProvider {
 
     return this.http.post(this.apiUrl + route, body, requestOptions);
   }
+
+  putData(route, params, body){
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json' );
+    const requestOptions = new RequestOptions({ headers: headers });
+
+    return this.http.put(this.apiUrl + route + params, body, requestOptions);
+  }
 }
 

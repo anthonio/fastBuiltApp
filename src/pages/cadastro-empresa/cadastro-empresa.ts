@@ -3,13 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RoutesProvider } from '../../providers/routes/routes';
 import { UserProvider } from '../../providers/user/user';
 
-/**
- * Generated class for the CadastroEmpresaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-cadastro-empresa',
@@ -33,7 +26,6 @@ export class CadastroEmpresaPage {
   }
 
   ionViewWillEnter() {
-    console.log("ionViewDidEnter");
 
     this.routes.getData("/tipo-empresa","").subscribe(data =>{
 

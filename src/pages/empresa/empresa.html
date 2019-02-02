@@ -21,7 +21,7 @@
       {{company.address}}
     </ion-card-content>
     <button ion-button clear (click)="teste(idCompany.value)">Empreendimentos</button>
-    <button ion-button clear (click)="teste(idCompany.value)">Editar informações</button>
+    <button ion-button clear (click)="editCurrentCompany(idCompany.value)">Editar informações</button>
     <ion-input type="text" value="{{company.id}}" #idCompany hidden></ion-input>
   </ion-card>
 

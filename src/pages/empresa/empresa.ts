@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RoutesProvider } from '../../providers/routes/routes';
 import { CadastroEmpresaPage } from '../cadastro-empresa/cadastro-empresa';
+import { EditaEmpresaPage } from '../edita-empresa/edita-empresa';
 
 
 @Component({
@@ -34,6 +35,10 @@ export class EmpresaPage {
 
   addNewCompany(){
     this.navCtrl.push(CadastroEmpresaPage);
+  }
+
+  editCurrentCompany(idCompany){
+    this.navCtrl.push(EditaEmpresaPage, {id:idCompany});
   }
 
   getCompanies(){

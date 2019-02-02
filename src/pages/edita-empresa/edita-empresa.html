@@ -1,0 +1,37 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Editar informações da empresa</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-item>
+      <ion-label stacked>Nome da empresa</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label stacked>Endereço</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label stacked>E-mail</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+  
+    <ion-list>
+      <ion-item>
+        <ion-label>Tipo de empresa</ion-label>
+        <ion-select [(ngModel)]="idType" multiple="false" cancelText="Cancelar" okText="Ok">
+          <ion-option *ngFor="let type of type_company" value={{type.id}} >{{type.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  
+    <button ion-button block (click)="update()">Salvar</button>
+  </ion-content>
+  

@@ -17,6 +17,7 @@ import { HTTP } from '@ionic-native/http/ngx';
 import { HttpModule } from '@angular/http';
 import { UserProvider } from '../providers/user/user';
 import { CadastroEmpresaPageModule } from '../pages/cadastro-empresa/cadastro-empresa.module';
+import { EditaEmpresaPageModule } from '../pages/edita-empresa/edita-empresa.module';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CadastroEmpresaPageModule } from '../pages/cadastro-empresa/cadastro-em
     LoginPageModule,
     RegistroPageModule,
     HttpModule,
-    CadastroEmpresaPageModule
+    CadastroEmpresaPageModule,
+    EditaEmpresaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
