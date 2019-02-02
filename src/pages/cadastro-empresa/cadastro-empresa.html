@@ -1,0 +1,42 @@
+<!--
+  Generated template for the CadastroEmpresaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Nova empresa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>Nome da empresa</ion-label>
+    <ion-input type="text" #name></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Endereço</ion-label>
+    <ion-input type="text" #address></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>E-mail</ion-label>
+    <ion-input type="email" #email></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Tipo de empresa</ion-label>
+      <ion-select [(ngModel)]="idType" multiple="false" cancelText="Cancelar" okText="Ok">
+        <ion-option *ngFor="let type of type_company" value={{type.id}} >{{type.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (click)="insert(name.value, address.value, email.value)">Salvar</button>
+</ion-content>

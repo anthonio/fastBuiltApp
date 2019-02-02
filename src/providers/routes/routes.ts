@@ -18,6 +18,7 @@ export class RoutesProvider {
   }
 
   getData(route, params){
+
     return this.http.get(this.apiUrl + route + params);
   }
 

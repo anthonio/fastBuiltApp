@@ -32,8 +32,7 @@ export class RegistroPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RegistroPage');
-    
+   
     this.routes.getData("/tipo-usuario","").subscribe(data =>{
 
       let response = (data as any);
@@ -62,13 +61,12 @@ export class RegistroPage {
 
       this.routes.postData("/usuario", body).subscribe(data => {
 
-        console.log(data);
         let response = (data as any);
 
         let ret = JSON.parse(response._body);
 
         if(ret.insertId){
-          this.navCtrl.push(TabsPage, {id_user: ret.insertId});
+          this.navCtrl.push(TabsPage);
         } else {
           console.log(ret);
         }

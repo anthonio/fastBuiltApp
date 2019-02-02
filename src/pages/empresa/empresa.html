@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Empresa</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only color="royal">
+      <button ion-button icon-only color="royal" (click)="addNewCompany()">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -10,5 +10,19 @@
 </ion-header>
 
 <ion-content padding>
+
+  <ion-card *ngFor="let company of user_company">
+    <ion-card-header>
+      {{company.name}}
+    </ion-card-header>
+    <ion-card-content>
+      {{company.email}}
+      <br>
+      {{company.address}}
+    </ion-card-content>
+    <button ion-button clear (click)="teste(idCompany.value)">Empreendimentos</button>
+    <button ion-button clear (click)="teste(idCompany.value)">Editar informações</button>
+    <ion-input type="text" value="{{company.id}}" #idCompany hidden></ion-input>
+  </ion-card>
 
 </ion-content>

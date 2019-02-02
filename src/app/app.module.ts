@@ -16,6 +16,7 @@ import { RegistroPageModule } from '../pages/registro/registro.module';
 import { HTTP } from '@ionic-native/http/ngx';
 import { HttpModule } from '@angular/http';
 import { UserProvider } from '../providers/user/user';
+import { CadastroEmpresaPageModule } from '../pages/cadastro-empresa/cadastro-empresa.module';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { UserProvider } from '../providers/user/user';
     IonicModule.forRoot(MyApp),
     LoginPageModule,
     RegistroPageModule,
-    HttpModule
+    HttpModule,
+    CadastroEmpresaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
