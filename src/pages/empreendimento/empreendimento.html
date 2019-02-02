@@ -1,0 +1,37 @@
+<!--
+  Generated template for the EmpreendimentoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Empreendimento</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="royal" (click)="addNewBuilding()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let building of compBuildings">
+    <ion-card-header>
+      {{building.name}}
+    </ion-card-header>
+    <ion-card-content>
+      {{building.address}}
+      <br>
+      Data de início: {{building.dt_begin}}
+      <br>
+      Data de fim: {{building.dt_end}}
+    </ion-card-content>
+    <button ion-button clear >Unidades</button>
+    <button ion-button clear >Editar informações</button>
+    <ion-input type="text" value="{{building.id}}" #idBuilding hidden></ion-input>
+  </ion-card>
+</ion-content>

@@ -11,7 +11,7 @@
 
 <ion-content padding>
 
-  <ion-card *ngFor="let company of user_company">
+  <ion-card *ngFor="let company of userCompany">
     <ion-card-header>
       {{company.name}}
     </ion-card-header>
@@ -20,7 +20,7 @@
       <br>
       {{company.address}}
     </ion-card-content>
-    <button ion-button clear (click)="teste(idCompany.value)">Empreendimentos</button>
+    <button ion-button clear (click)="goToBuilding(idCompany.value)">Empreendimentos</button>
     <button ion-button clear (click)="editCurrentCompany(idCompany.value)">Editar informações</button>
     <ion-input type="text" value="{{company.id}}" #idCompany hidden></ion-input>
   </ion-card>

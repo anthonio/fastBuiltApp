@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { RoutesProvider } from '../../providers/routes/routes';
 import { CadastroEmpresaPage } from '../cadastro-empresa/cadastro-empresa';
 import { EditaEmpresaPage } from '../edita-empresa/edita-empresa';
+import { EmpreendimentoPage } from '../empreendimento/empreendimento';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { EditaEmpresaPage } from '../edita-empresa/edita-empresa';
 })
 export class EmpresaPage {
   private userData: any;
-  public user_company = new Array<any>();
+  public userCompany = new Array<any>();
 
   constructor(
     public navCtrl: NavController,
@@ -29,16 +30,18 @@ export class EmpresaPage {
     this.getCompanies();
   }
 
-  teste(idCompany){
-    console.log(idCompany);
-  }
-
   addNewCompany(){
     this.navCtrl.push(CadastroEmpresaPage);
   }
 
   editCurrentCompany(idCompany){
     this.navCtrl.push(EditaEmpresaPage, {id:idCompany});
+  }
+
+  goToBuilding(idCompany){
+
+    this.navCtrl.push(EmpreendimentoPage, {id:idCompany});
+
   }
 
   getCompanies(){
@@ -50,7 +53,7 @@ export class EmpresaPage {
 
       let ret = JSON.parse(response._body);
 
-      this.user_company = ret;
+      this.userCompany = ret;
 
     }, error =>{
       console.log("error", error);

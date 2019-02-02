@@ -1,0 +1,39 @@
+<!--
+  Generated template for the CadastoEmpreendimentoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Novo empreendimento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label stacked>Nome do empreendimento</ion-label>
+        <ion-input type="text" #name></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked>Endereço</ion-label>
+      <ion-input type="text" #address></ion-input>
+    </ion-item>
+
+    <ion-list>
+        <ion-item>
+          <ion-label>Data de início</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" min="2017" max="2050-12-31" #dtBegin></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Data de fim</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" min="2017" max="2050-12-31" #dtEnd></ion-datetime>
+        </ion-item>
+    </ion-list>
+
+    <button ion-button block (click)="insert(name.value, address.value, dtBegin.value, dtEnd.value)">Salvar</button>
+</ion-content>

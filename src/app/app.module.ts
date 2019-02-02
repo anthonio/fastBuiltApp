@@ -18,6 +18,8 @@ import { HttpModule } from '@angular/http';
 import { UserProvider } from '../providers/user/user';
 import { CadastroEmpresaPageModule } from '../pages/cadastro-empresa/cadastro-empresa.module';
 import { EditaEmpresaPageModule } from '../pages/edita-empresa/edita-empresa.module';
+import { EmpreendimentoPageModule } from '../pages/empreendimento/empreendimento.module';
+import { CadastoEmpreendimentoPageModule } from '../pages/cadasto-empreendimento/cadasto-empreendimento.module';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { EditaEmpresaPageModule } from '../pages/edita-empresa/edita-empresa.mod
     RegistroPageModule,
     HttpModule,
     CadastroEmpresaPageModule,
-    EditaEmpresaPageModule
+    EditaEmpresaPageModule,
+    EmpreendimentoPageModule,
+    CadastoEmpreendimentoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
