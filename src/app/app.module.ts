@@ -20,6 +20,8 @@ import { CadastroEmpresaPageModule } from '../pages/cadastro-empresa/cadastro-em
 import { EditaEmpresaPageModule } from '../pages/edita-empresa/edita-empresa.module';
 import { EmpreendimentoPageModule } from '../pages/empreendimento/empreendimento.module';
 import { CadastoEmpreendimentoPageModule } from '../pages/cadasto-empreendimento/cadasto-empreendimento.module';
+import { EditaEmpreendimentoPageModule } from '../pages/edita-empreendimento/edita-empreendimento.module';
+
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { CadastoEmpreendimentoPageModule } from '../pages/cadasto-empreendimento
     CadastroEmpresaPageModule,
     EditaEmpresaPageModule,
     EmpreendimentoPageModule,
-    CadastoEmpreendimentoPageModule
+    CadastoEmpreendimentoPageModule,
+    EditaEmpreendimentoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

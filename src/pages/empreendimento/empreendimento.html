@@ -31,7 +31,7 @@
       Data de fim: {{building.dt_end}}
     </ion-card-content>
     <button ion-button clear >Unidades</button>
-    <button ion-button clear >Editar informações</button>
+    <button ion-button clear (click)="editCurrentyBuilding(idBuilding.value)">Editar informações</button>
     <ion-input type="text" value="{{building.id}}" #idBuilding hidden></ion-input>
   </ion-card>
 </ion-content>

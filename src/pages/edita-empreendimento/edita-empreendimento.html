@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>EditaEmpreendimento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label stacked>Nome do empreendimento</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label stacked>Endereço</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+  
+    <ion-list>
+        <ion-item>
+          <ion-label>Data de início</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" min="2017" max="2050-12-31" [(ngModel)]="dtBegin"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Data de fim</ion-label>
+          <ion-datetime displayFormat="DD MMM YYYY" min="2017" max="2050-12-31" [(ngModel)]="dtEnd"></ion-datetime>
+        </ion-item>
+    </ion-list>
+  
+    <button ion-button block (click)="update()">Salvar</button>
+</ion-content>

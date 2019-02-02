@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RoutesProvider } from '../../providers/routes/routes';
 import { UserProvider } from '../../providers/user/user';
 import { CadastoEmpreendimentoPage } from '../cadasto-empreendimento/cadasto-empreendimento';
+import { EditaEmpreendimentoPage } from '../edita-empreendimento/edita-empreendimento';
 
 @IonicPage()
 @Component({
@@ -30,6 +31,10 @@ export class EmpreendimentoPage {
 
   addNewBuilding(){
     this.navCtrl.push(CadastoEmpreendimentoPage, {id_company: this.navParams.get("id")});
+  }
+
+  editCurrentyBuilding(idBuilding){
+    this.navCtrl.push(EditaEmpreendimentoPage, {id_building: idBuilding});
   }
 
   getBuilding(){
