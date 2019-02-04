@@ -22,9 +22,6 @@ export class CadastoEmpreendimentoPage {
     private user: UserProvider) {
   }
 
-  ionViewWillEnter(){
-    console.log(this.navParams.get("id_company"));
-  }
 
   insert(name, address, dtBegin, dtEnd){
     let dt_begin = `${dtBegin.day}/${dtBegin.month}/${dtBegin.year}`;

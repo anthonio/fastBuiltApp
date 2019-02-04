@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RoutesProvider } from '../../providers/routes/routes';
 import { UserProvider } from '../../providers/user/user';
+import moment from 'moment';
+
 
 @IonicPage()
 @Component({
@@ -38,11 +40,8 @@ export class EditaEmpreendimentoPage {
       
       this.name = ret[0].name;
       this.address = ret[0].address;
-      this.dtBegin = {day: "02", month: "02", year:"2019"};//ret[0].dt_begin;
-      this.dtEnd = //ret[0].dt_end;
-
-
-      console.log(ret);
+      this.dtBegin = ret[0].dt_begin;
+      this.dtEnd = ret[0].dt_end;
 
     }, error =>{
       console.log("error",error);
@@ -51,7 +50,27 @@ export class EditaEmpreendimentoPage {
 
   update(){
 
-    console.log(this.name, this.address, this.dtBegin);
+    let dateFormat = moment(this.dtBegin).format("L").split("/");
+    let dtBegin = `${dateFormat[1]}/${dateFormat[0]}/${dateFormat[2]}`;
+
+    dateFormat = moment(this.dtEnd).format("L").split("/");
+    let dtEnd = `${dateFormat[1]}/${dateFormat[0]}/${dateFormat[2]}`;
+
+    let body = {
+      name: this.name,
+      address: this.address,
+      dt_begin: dtBegin,
+      dt_end: dtEnd,
+      id_user: this.userData.idUser,
+      id_company: this.navParams.get("id_company")
+    }
+    
+    this.routes.putData("/empreendimento",`/${this.navParams.get("id_building")}`, body).subscribe(data => {
+      this.navCtrl.pop();
+    }, error => {
+      console.error(error);
+    });
+    
   }
 
 }

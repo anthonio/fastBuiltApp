@@ -4,6 +4,7 @@ import { RoutesProvider } from '../../providers/routes/routes';
 import { UserProvider } from '../../providers/user/user';
 import { CadastoEmpreendimentoPage } from '../cadasto-empreendimento/cadasto-empreendimento';
 import { EditaEmpreendimentoPage } from '../edita-empreendimento/edita-empreendimento';
+import moment from 'moment';
 
 @IonicPage()
 @Component({
@@ -34,7 +35,7 @@ export class EmpreendimentoPage {
   }
 
   editCurrentyBuilding(idBuilding){
-    this.navCtrl.push(EditaEmpreendimentoPage, {id_building: idBuilding});
+    this.navCtrl.push(EditaEmpreendimentoPage, {id_building: idBuilding, id_company: this.navParams.get("id")});
   }
 
   getBuilding(){
@@ -45,6 +46,14 @@ export class EmpreendimentoPage {
       let response = (data as any);
 
       let ret = JSON.parse(response._body);
+
+      for (let i = 0; i < ret.length; i++) {
+        let dtBegin = moment(ret[i].dt_begin).format("L").split("/");
+        ret[i].dt_begin = `${dtBegin[1]}/${dtBegin[0]}/${dtBegin[2]}`;
+
+        let dtEnd = moment(ret[i].dt_end).format("L").split("/");
+        ret[i].dt_end = `${dtEnd[1]}/${dtEnd[0]}/${dtEnd[2]}`;
+      }
 
       this.compBuildings = ret;
 
