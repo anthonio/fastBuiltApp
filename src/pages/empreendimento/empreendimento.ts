@@ -5,6 +5,7 @@ import { UserProvider } from '../../providers/user/user';
 import { CadastoEmpreendimentoPage } from '../cadasto-empreendimento/cadasto-empreendimento';
 import { EditaEmpreendimentoPage } from '../edita-empreendimento/edita-empreendimento';
 import moment from 'moment';
+import { UnidadePage } from '../unidade/unidade';
 
 @IonicPage()
 @Component({
@@ -36,6 +37,12 @@ export class EmpreendimentoPage {
 
   editCurrentyBuilding(idBuilding){
     this.navCtrl.push(EditaEmpreendimentoPage, {id_building: idBuilding, id_company: this.navParams.get("id")});
+  }
+
+  goToUnity(idBuilding){
+
+    this.navCtrl.push(UnidadePage, {id_building: idBuilding});
+
   }
 
   getBuilding(){

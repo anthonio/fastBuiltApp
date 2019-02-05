@@ -21,6 +21,7 @@ import { EditaEmpresaPageModule } from '../pages/edita-empresa/edita-empresa.mod
 import { EmpreendimentoPageModule } from '../pages/empreendimento/empreendimento.module';
 import { CadastoEmpreendimentoPageModule } from '../pages/cadasto-empreendimento/cadasto-empreendimento.module';
 import { EditaEmpreendimentoPageModule } from '../pages/edita-empreendimento/edita-empreendimento.module';
+import { UnidadePageModule } from '../pages/unidade/unidade.module';
 
 
 
@@ -42,7 +43,8 @@ import { EditaEmpreendimentoPageModule } from '../pages/edita-empreendimento/edi
     EditaEmpresaPageModule,
     EmpreendimentoPageModule,
     CadastoEmpreendimentoPageModule,
-    EditaEmpreendimentoPageModule
+    EditaEmpreendimentoPageModule,
+    UnidadePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

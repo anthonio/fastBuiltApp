@@ -1,0 +1,27 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Unidades</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="royal" (click)="addNewUnity()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let unity of unities">
+      <ion-card-header>
+        {{unity.name}}
+      </ion-card-header>
+      
+      <button ion-button clear >Ambientes</button>
+      <button ion-button clear >Editar informações</button>
+      <ion-input type="text" value="{{unity.id}}" #idBuilding hidden></ion-input>
+    </ion-card>
+
+</ion-content>
